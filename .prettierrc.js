@@ -11,4 +11,5 @@ module.exports = {
   arrowParens: 'avoid',
   // 换行符
   endOfLine: 'lf',
+  htmlWhitespaceSensitivity: 'strict',
 }

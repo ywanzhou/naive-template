@@ -23,7 +23,9 @@ export default defineConfig(({ mode }: ConfigEnv) => {
 
     /* more config */
     plugins: [
-      vue(),
+      vue({
+        reactivityTransform: true,
+      }),
       AutoImport({
         resolvers: [],
         // 自定引入 Vue VueRouter API,如果还需要其他的可以自行引入

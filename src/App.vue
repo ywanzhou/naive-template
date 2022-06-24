@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { zhCN, zhTW, dateZhCN, dateZhTW, darkTheme, lightTheme } from 'naive-ui'
 import { Sunny, Moon } from '@vicons/ionicons5'
+import { GradientText } from '/@/components/GradientText'
 type LocaleType = 'zhCN' | 'zhTW'
 const locale = ref<LocaleType>('zhCN')
 const isDark = ref(false)
@@ -24,6 +25,18 @@ const handleSelect = (e: LocaleType) => {
   >
     <NGlobalStyle />
     <div style="padding: 24px">
+      <GradientText
+        type="info"
+        size="32px"
+        :weight="'bold'"
+        :gradient="{
+          rotate: 148,
+          start: '#fc0',
+          end: '#cff',
+        }"
+      >
+        渐变文字
+      </GradientText>
       <NSpace vertical>
         <NSpace>
           <NSwitch v-model:value="isDark" size="large">
@@ -38,31 +51,34 @@ const handleSelect = (e: LocaleType) => {
             <NButton>切换语言</NButton>
           </NDropdown>
         </NSpace>
-        <NCard title="常用"
-          ><NSpace vertical>
+        <NCard title="常用">
+          <NSpace vertical>
             <NSpace>
               <NButton>Default</NButton>
-              <NButton type="tertiary"> Tertiary </NButton>
-              <NButton type="primary"> Primary </NButton>
-              <NButton type="info"> Info </NButton>
-              <NButton type="success"> Success </NButton>
-              <NButton type="warning"> Warning </NButton>
-              <NButton type="error"> Error </NButton>
+              <NButton type="tertiary">Tertiary</NButton>
+              <NButton type="primary">Primary</NButton>
+              <NButton type="info">Info</NButton>
+              <NButton type="success">Success</NButton>
+              <NButton type="warning">Warning</NButton>
+              <NButton type="error">Error</NButton>
             </NSpace>
             <NSpace>
-              <NTag> 爱在西元前 </NTag>
-              <NTag type="success"> 不该 </NTag>
-              <NTag type="warning"> 超人不会飞 </NTag>
-              <NTag type="error"> 手写的从前 </NTag>
-              <NTag type="info"> 哪里都是你 </NTag>
+              <NTag>爱在西元前</NTag>
+              <NTag type="success">不该</NTag>
+              <NTag type="warning">超人不会飞</NTag>
+              <NTag type="error">手写的从前</NTag>
+              <NTag type="info">哪里都是你</NTag>
             </NSpace>
           </NSpace>
         </NCard>
-        <NCard title="表单"
-          ><NSpace vertical>
-            <NSelect /><NInput /> <NTimePicker
-          /></NSpace> </NCard
-      ></NSpace>
+        <NCard title="表单">
+          <NSpace vertical>
+            <NSelect />
+            <NInput />
+            <NTimePicker />
+          </NSpace>
+        </NCard>
+      </NSpace>
     </div>
   </NConfigProvider>
 </template>

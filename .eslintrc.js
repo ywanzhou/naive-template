@@ -23,9 +23,10 @@ module.exports = defineConfig({
     'plugin:vue/vue3-recommended',
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended', // typescript-eslint推荐规则,
-    'prettier',
-    'plugin:prettier/recommended',
+    // 'prettier',
+    // 'plugin:prettier/recommended',
     './.eslintrc-auto-import.json',
+    'plugin:prettier/recommended',
   ],
   // https://cn.eslint.org/docs/rules/
   rules: {
@@ -63,10 +64,6 @@ module.exports = defineConfig({
     '@typescript-eslint/no-unused-vars': [
       'error',
       { vars: 'all', args: 'after-used', ignoreRestSiblings: false },
-    ],
-    'prettier/prettier': [
-      'error',
-      { singleQuote: true, parser: 'flow', semi: false },
     ],
     'vue/html-indent': 'off',
     // 关闭此规则 使用 prettier 的格式化规则，
