@@ -18,25 +18,15 @@ const handleSelect = (e: LocaleType) => {
 }
 </script>
 <template>
+  <GradientText type="info" size="32px" :weight="'bold'">渐变文字</GradientText>
   <NConfigProvider
+    v-if="false"
     :locale="langList[locale].locale"
     :date-locale="langList[locale].dataLocale"
     :theme="isDark === true ? darkTheme : lightTheme"
   >
     <NGlobalStyle />
     <div style="padding: 24px">
-      <GradientText
-        type="info"
-        size="32px"
-        :weight="'bold'"
-        :gradient="{
-          rotate: 148,
-          start: '#fc0',
-          end: '#cff',
-        }"
-      >
-        渐变文字
-      </GradientText>
       <NSpace vertical>
         <NSpace>
           <NSwitch v-model:value="isDark" size="large">

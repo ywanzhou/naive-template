@@ -14,12 +14,12 @@ type WeightType =
   | 'bold'
 type RotateType = 'to left' | 'to right' | 'to bottom' | 'to top' | number
 interface IGradient {
-  rotate: RotateType
-  start: string
-  end: string
+  rotate: RotateType // 线性渐变方向
+  start: string // 开始的色值
+  end: string // 结束的色值
 }
 interface Props {
-  type: TextType
+  type?: TextType
   size?: string
   gradient?: IGradient
   weight?: WeightType
@@ -41,6 +41,7 @@ const props = defineProps<Props>()
       '--end': props.gradient?.end,
     }"
   >
+    <!-- 默认插槽，也就是文字 -->
     <slot></slot>
   </span>
 </template>
